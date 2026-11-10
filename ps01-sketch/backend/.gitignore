@@ -1,0 +1,42 @@
+# ──────────────────────────────────────────────
+# AI NEXUS Backend  –  .gitignore
+# ──────────────────────────────────────────────
+
+# Environment secrets — NEVER commit these
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Generated images (can be large)
+generated_images/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Alembic (keep alembic.ini and versions/ in git, exclude auto-generated)
+alembic/__pycache__/
+
+# Logs
+*.log

@@ -1,0 +1,40 @@
+# ============================================================
+# requirements.txt  –  PS-01 FastAPI Backend
+# ============================================================
+
+# Web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# Database
+sqlalchemy==2.0.36
+asyncpg==0.30.0              # async PostgreSQL driver for SQLAlchemy
+alembic==1.14.0              # database migrations
+aiosqlite==0.20.0
+
+# Pydantic & settings
+pydantic==2.10.2
+pydantic-settings==2.6.1
+
+# Auth
+python-jose[cryptography]==3.3.0   # JWT encode / decode
+passlib[bcrypt]==1.7.4             # password hashing
+
+# Google Gemini  — pure-HTTP REST SDK, no grpc/DLL required
+google-genai==0.8.0
+
+# Image generation & inpainting (Tier 1 – HF Inference API, zero-budget)
+httpx==0.28.0                      # async HTTP client for HF API calls
+Pillow==11.0.0                     # PIL mask generation + image I/O
+
+# Image generation (Tier 2 – local GPU, optional — only needed for IMAGE_MODE=local)
+# Uncomment if running locally with a CUDA GPU (6-8 GB VRAM minimum):
+# torch==2.5.1                     # pip install torch --index-url https://download.pytorch.org/whl/cu121
+# diffusers==0.31.0                # FLUX + SDXL pipelines
+# transformers==4.46.3             # model tokenisers
+# accelerate==1.1.1                # device_map + memory-efficient loading
+# sentencepiece==0.2.0             # T5 tokeniser used by FLUX
+
+# Utilities
+python-dotenv==1.0.1
+python-multipart==0.0.17          # form data (file uploads)

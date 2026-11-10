@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans text-slate-200 min-h-screen;
+  background: #02050a;
+}
+@layer components {
+  .glass { @apply bg-[#06100f]/70 backdrop-blur-md border border-teal-300/15 rounded-2xl shadow-lg shadow-black/40; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all duration-200 border border-white/10 bg-white/5 hover:bg-white/10 hover:border-nexus-cyan/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-nexus-cyan disabled:opacity-40 disabled:pointer-events-none; }
+  .btn-primary { @apply bg-nexus-cyan/90 text-nexus-950 border-transparent font-semibold hover:bg-nexus-cyan hover:shadow-glow; }
+  .chip { @apply cursor-grab active:cursor-grabbing select-none rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-xs transition-all hover:border-nexus-cyan/60 hover:-translate-y-0.5; }
+  .chip-on { @apply border-nexus-cyan bg-nexus-cyan/15 text-nexus-cyan shadow-glow; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-thumb { background: #22e3d633; border-radius: 8px; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes twinkle { 50% { opacity: .35; } }
+
+/* Feature Controls range sliders: dark track, cyan fill (--p), light-blue thumb and focus ring */
+.nexus-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #38bdf8 0 var(--p, 50%), #272d38 var(--p, 50%) 100%);
+}
+.nexus-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7dd3fc;
+  border: none;
+  box-shadow: 0 0 0 3px #0d1117;
+  cursor: pointer;
+}
+.nexus-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7dd3fc;
+  border: none;
+  box-shadow: 0 0 0 3px #0d1117;
+  cursor: pointer;
+}
+.nexus-range:focus,
+.nexus-range:active {
+  outline: 2px solid #38bdf8;
+  outline-offset: 4px;
+}
